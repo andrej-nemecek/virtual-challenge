@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <%- include('./templates/meta.ejs')-%>
+    <title>OSA Virtual Challenge</title>
+  </head>
+  <body>
+    <header class="page-header page-header--bg-homepage">
+      <div class="l-page-container">
+        <%- include('./templates/nav.ejs')-%>
+        <div class="grid-columns-2 py-8">
+          <section>
+            <h1 class="page-header__headline">
+              Prekonaj svoje limity s&nbsp;virtuálnymi výzvami.
+              <span class="headline-underline"></span>
+            </h1>
+            <p class="page-header__text">
+              Beh, cyklistika alebo turistika. Virtuálne výzvy, ktoré môžeš
+              absolvovať kdekoľvek a kedykoľvek. Zdolaj výzvu a získaj hodnotné
+              odmeny.
+            </p>
+            <a href="/#vyzvy" class="button">Zobraziť výzvy</a>
+          </section>
+        </div>
+      </div>
+    </header>
+    <main>
+      <%- include('./templates/howToJoin.ejs')-%>
+      <section id="vyzvy" class="bg-basic py-2">
+        <div class="l-page-container">
+          <section>
+            <h2 class="text-center mb-1">
+              Bežecké výzvy
+              <span
+                class="headline-underline headline-underline--centered"
+              ></span>
+            </h2>
+            <div class="cards-grid py-1">
+              <a href="/vyzvy/basic-run">
+                <article class="challenge-card bg-card__basic-run">
+                  <h3 class="challenge-card__title">Basic - Run</h3>
+                  <p class="challenge-card__description">
+                    Beh očisťuje. Obuj si tenisky a oddýchni si od povinností.
+                  </p>
+                  <div class="challenge-card__section">
+                    <div
+                      class="challenge-card__text challenge-card__text--bold"
+                    >
+                      1 aktivita
+                    </div>
+                    <div
+                      class="challenge-card__text challenge-card__text--highlighted"
+                    >
+                      5km
+                    </div>
+                  </div>
+                </article>
+              </a>
+              <a href="/vyzvy/hobby-run">
+                <article class="challenge-card bg-card__hobby-run">
+                  <h3 class="challenge-card__title">Hobby - Run</h3>
+                  <p class="challenge-card__description">
+                    Ideálny týždeň pre rekreačného bežca?
+                  </p>
+                  <div class="challenge-card__section">
+                    <div
+                      class="challenge-card__text challenge-card__text--bold"
+                    >
+                      3 aktivity
+                    </div>
+                    <div
+                      class="challenge-card__text challenge-card__text--highlighted"
+                    >
+                      6km / 8km / 10km
+                    </div>
+                  </div>
+                </article>
+              </a>
+              <a href="/vyzvy/hard-run">
+                <article class="challenge-card bg-card__hard-run">
+                  <h3 class="challenge-card__title">Hard - Run</h3>
+                  <p class="challenge-card__description">
+                    Nevieš si predstaviť, že zabehneš polmaratón? Ten pocit
+                    stojí za to.
+                  </p>
+                  <div class="challenge-card__section">
+                    <div
+                      class="challenge-card__text challenge-card__text--bold"
+                    >
+                      6 aktivít
+                    </div>
+                    <div
+                      class="challenge-card__text challenge-card__text--highlighted"
+                    >
+                      7km / 9km / 12km <br />
+                      15km / 17km / 21km
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+          </section>
+          <section>
+            <h2 class="text-center mt-2 mb-1">
+              Cyklistické výzvy
+              <span
+                class="headline-underline headline-underline--centered"
+              ></span>
+            </h2>
+            <div class="cards-grid py-1">
+              <a href="/vyzvy/basic-bike">
+                <article class="challenge-card bg-card__basic-bike">
+                  <h3 class="challenge-card__title">Basic - Bike</h3>
+                  <p class="challenge-card__description">
+                    Vytiahni svoj bike, namaž reťaz a vyraz. Cyklistika je
+                    relax.
+                  </p>
+                  <div class="challenge-card__section">
+                    <div
+                      class="challenge-card__text challenge-card__text--bold"
+                    >
+                      1 aktivita
+                    </div>
+                    <div
+                      class="challenge-card__text challenge-card__text--highlighted"
+                    >
+                      20km
+                    </div>
+                  </div>
+                </article>
+              </a>
+              <a href="/vyzvy/hobby-bike">
+                <article class="challenge-card bg-card__hobby-bike">
+                  <h3 class="challenge-card__title">Hobby - Bike</h3>
+                  <p class="challenge-card__description">
+                    Víkend čo víkend v sedle svojho bicykla. Nie? Tak prečo to
+                    neskúsiť.
+                  </p>
+                  <div class="challenge-card__section">
+                    <div
+                      class="challenge-card__text challenge-card__text--bold"
+                    >
+                      3 aktivity
+                    </div>
+                    <div
+                      class="challenge-card__text challenge-card__text--highlighted"
+                    >
+                      25km / 35km / 45km
+                    </div>
+                  </div>
+                </article>
+              </a>
+              <a href="/vyzvy/hard-bike">
+                <article class="challenge-card bg-card__hard-bike">
+                  <h3 class="challenge-card__title">Hard - Bike</h3>
+                  <p class="challenge-card__description">
+                    Vystúp zo svojej komfortnej zóny a zvládni svojich prvých
+                    100km.
+                  </p>
+                  <div class="challenge-card__section">
+                    <div
+                      class="challenge-card__text challenge-card__text--bold"
+                    >
+                      6 aktivít
+                    </div>
+                    <div
+                      class="challenge-card__text challenge-card__text--highlighted"
+                    >
+                      50km / 60km / 70km <br />
+                      80km / 90km / 100km
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+          </section>
+          <section>
+            <h2 class="text-center mt-2 mb-1">
+              Turistické výzvy
+              <span
+                class="headline-underline headline-underline--centered"
+              ></span>
+            </h2>
+            <div class="cards-grid py-1">
+              <a href="/vyzvy/basic-hike">
+                <article class="challenge-card bg-card__basic-hike">
+                  <h3 class="challenge-card__title">Basic - Hike</h3>
+                  <p class="challenge-card__description">
+                    Vyber sa s nami na relaxačnú túru tam, kde to máš rád.
+                  </p>
+                  <div class="challenge-card__section">
+                    <div
+                      class="challenge-card__text challenge-card__text--bold"
+                    >
+                      1 aktivita
+                    </div>
+                    <div
+                      class="challenge-card__text challenge-card__text--highlighted"
+                    >
+                      10km
+                    </div>
+                  </div>
+                </article>
+              </a>
+              <a href="/vyzvy/hobby-hike">
+                <article class="challenge-card bg-card__hobby-hike">
+                  <h3 class="challenge-card__title">Hobby - Hike</h3>
+                  <p class="challenge-card__description">
+                    Zbaľ svoj batoh a uži si krásne výhľady na horách.
+                  </p>
+                  <div class="challenge-card__section">
+                    <div
+                      class="challenge-card__text challenge-card__text--bold"
+                    >
+                      3 aktivity
+                    </div>
+                    <div
+                      class="challenge-card__text challenge-card__text--highlighted"
+                    >
+                      6km / 12km / 18km
+                    </div>
+                  </div>
+                </article>
+              </a>
+              <a href="/vyzvy/hard-hike">
+                <article class="challenge-card bg-card__hard-hike">
+                  <h3 class="challenge-card__title">Hard - Hike</h3>
+                  <p class="challenge-card__description">
+                    Ukáž nám krásy našich hôr, kde rád tráviš čas a relaxuješ.
+                  </p>
+                  <div class="challenge-card__section">
+                    <div
+                      class="challenge-card__text challenge-card__text--bold"
+                    >
+                      6 aktivít
+                    </div>
+                    <div
+                      class="challenge-card__text challenge-card__text--highlighted"
+                    >
+                      5km / 10km / 15km <br />
+                      20km / 25km / 30km
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+      <section id="baliky" class="section section__bg py-4">
+        <div class="l-page-container text-center">
+          <h2>
+            Balíky výziev
+            <span
+              class="headline-underline headline-underline--centered"
+            ></span>
+          </h2>
+          <p class="text-max-width block-centered">
+            Tie najobľúbenejšie pohybové činnosti sme spojili do šiestich
+            balíkov. Namiešali sme ich tak, aby si ideálnu kombináciu výziev
+            našiel každý. Okrem toho získaš viac odmien a dostaneš zľavu na
+            štartovnom poplatku.
+          </p>
+        </div>
+      </section>
+      <section class="bg-basic py-2">
+        <div class="l-page-container">
+          <h2 class="text-center">
+            Vyber si balík<span
+              class="headline-underline headline-underline--centered"
+            ></span>
+          </h2>
+          <div class="cards-grid">
+            <a href="/vyzvy/run">
+              <article class="challenge-card bg-card__run">
+                <h3 class="challenge-card__title">Run</h3>
+                <p class="challenge-card__description">
+                  Každý týždeň zabehni viac, ako si myslíš, že si schopný.
+                </p>
+                <div class="challenge-card__section">
+                  <div class="challenge-card__text challenge-card__text--bold">
+                    3 výzvy
+                  </div>
+                  <div
+                    class="challenge-card__text challenge-card__text--highlighted"
+                  >
+                    BASIC - RUN<br />HOBBY - RUN<br />HARD - RUN
+                  </div>
+                </div>
+              </article>
+            </a>
+            <a href="/vyzvy/bike">
+              <article class="challenge-card bg-card__bike">
+                <h3 class="challenge-card__title">Bike</h3>
+                <p class="challenge-card__description">
+                  Naozajstná previerka mojej vôle a síl. A aj zadku.
+                </p>
+                <div class="challenge-card__section">
+                  <div class="challenge-card__text challenge-card__text--bold">
+                    3 výzvy
+                  </div>
+                  <div
+                    class="challenge-card__text challenge-card__text--highlighted"
+                  >
+                    BASIC - BIKE<br />HOBBY - BIKE<br />HARD - BIKE
+                  </div>
+                </div>
+              </article>
+            </a>
+            <a href="/vyzvy/hike">
+              <article class="challenge-card bg-card__hike">
+                <h3 class="challenge-card__title">Hike</h3>
+                <p class="challenge-card__description">
+                  10 krásnych túr s rodinou? Aký môže byť krajší relax?
+                </p>
+                <div class="challenge-card__section">
+                  <div class="challenge-card__text challenge-card__text--bold">
+                    3 výzvy
+                  </div>
+                  <div
+                    class="challenge-card__text challenge-card__text--highlighted"
+                  >
+                    BASIC - HIKE<br />HOBBY - HIKE<br />HARD - HIKE
+                  </div>
+                </div>
+              </article>
+            </a>
+            <a href="/vyzvy/basic">
+              <article class="challenge-card bg-card__basic">
+                <h3 class="challenge-card__title">Basic</h3>
+                <p class="challenge-card__description">
+                  Ideálna kombinácia pre rodiny s deťmi. Ten čas spolu ničím
+                  nezaplatíš.
+                </p>
+                <div class="challenge-card__section">
+                  <div class="challenge-card__text challenge-card__text--bold">
+                    3 výzvy
+                  </div>
+                  <div
+                    class="challenge-card__text challenge-card__text--highlighted"
+                  >
+                    BASIC - RUN<br />BASIC - BIKE<br />BASIC - HIKE
+                  </div>
+                </div>
+              </article>
+            </a>
+            <a href="/vyzvy/hobby">
+              <article class="challenge-card bg-card__hobby">
+                <h3 class="challenge-card__title">Hobby</h3>
+                <p class="challenge-card__description">
+                  V zdravom tele zdravý duch. Najobľúbenejší balík plný
+                  zážitkov.
+                </p>
+                <div class="challenge-card__section">
+                  <div class="challenge-card__text challenge-card__text--bold">
+                    3 výzvy
+                  </div>
+                  <div
+                    class="challenge-card__text challenge-card__text--highlighted"
+                  >
+                    HOBBY - RUN<br />HOBBY - BIKE<br />HOBBY - HIKE
+                  </div>
+                </div>
+              </article>
+            </a>
+            <a href="/vyzvy/hard">
+              <article class="challenge-card bg-card__hard">
+                <h3 class="challenge-card__title">Hard</h3>
+                <p class="challenge-card__description">
+                  Tu sú len dve možnosti. Buď je to presne o tebe, alebo to ešte
+                  len zistíš.
+                </p>
+                <div class="challenge-card__section">
+                  <div class="challenge-card__text challenge-card__text--bold">
+                    3 výzvy
+                  </div>
+                  <div
+                    class="challenge-card__text challenge-card__text--highlighted"
+                  >
+                    HARD - RUN<br />HARD - BIKE<br />HARD - HIKE
+                  </div>
+                </div>
+              </article>
+            </a>
+            <a class="cards-grid__merge-three-columns" href="/vyzvy/complete">
+              <article
+                class="challenge-card challenge-card--full-width bg-card__complete"
+              >
+                <h3 class="challenge-card__title">Complete</h3>
+                <p class="challenge-card__description">
+                  Rok plný zážitkov na nových miestach a s novými priateľmi.
+                </p>
+                <div class="challenge-card__columns">
+                  <div class="challenge-card__section">
+                    <div
+                      class="challenge-card__text challenge-card__text--bold"
+                    >
+                      3 výzvy BASIC
+                    </div>
+                    <div
+                      class="challenge-card__text challenge-card__text--highlighted"
+                    >
+                      BASIC - RUN<br />BASIC - BIKE<br />BASIC - HIKE
+                    </div>
+                  </div>
+                  <div class="challenge-card__section">
+                    <div
+                      class="challenge-card__text challenge-card__text--bold"
+                    >
+                      3 výzvy HOBBY
+                    </div>
+                    <div
+                      class="challenge-card__text challenge-card__text--highlighted"
+                    >
+                      HOBBY - RUN<br />HOBBY - BIKE<br />HOBBY - HIKE
+                    </div>
+                  </div>
+                  <div class="challenge-card__section">
+                    <div
+                      class="challenge-card__text challenge-card__text--bold"
+                    >
+                      3 výzvy HARD
+                    </div>
+                    <div
+                      class="challenge-card__text challenge-card__text--highlighted"
+                    >
+                      HARD - RUN<br />HARD - BIKE<br />HARD - HIKE
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include('./templates/footer.ejs') -%> <%-
+    include('./templates/scripts.ejs') -%>
+  </body>
+</html>

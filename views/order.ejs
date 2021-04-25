@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <%- include('./templates/meta.ejs')-%>
+    <title>OSA Virtual Challenge</title>
+  </head>
+  <body>
+    <header class="page-header page-header--bg-homepage">
+      <div class="l-page-container">
+        <%- include('./templates/nav.ejs')-%>
+        <div class="grid-columns-2 py-8">
+          <section>
+            <h1 class="page-header__headline">
+              Zhrnutie objednávky
+              <span class="headline-underline"></span>
+            </h1>
+            <ul class="challenge-meta">
+              <li class="challenge-meta__item">
+                <span class="far fa-user-circle fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text">
+                  <span class="subheading">Kontaktné údaje</span><br />
+                  <%= user.name %><br />
+                  <%= user.email %>
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-map-marker-alt fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text">
+                  <span class="subheading">Adresa</span><br />
+                  <%= user.adress %><br />
+                  <%= user.postCode %>, <%= user.city %>
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-running fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Vybraná výzva</span><br />
+                  <%= challenge.name.toUpperCase(); %>
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-heartbeat fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading"
+                    >Počet aktivít: <%= challenge.activities.length %> </span
+                  ><br />
+                  <% challenge.activities.forEach((activity, index) => { %> <%=
+                  activity.name %><% if (index !== challenge.activities.length
+                  -1) { %> / <% } %> <% }); %>
+                </div>
+              </li>
+            </ul>
+            <button
+              id="submit-order"
+              class="button mt-1"
+              data-challenge-id="<%= challenge.id %>"
+            >
+              Potvrdiť objednávku
+            </button>
+            <p class="text-light text-small">
+              Potvrdením objednávky súhlasíte s
+              <a class="link" href="/podmienky">všeobecnými podmienkami</a> a
+              <a class="link" href="/gdpr">ochranou osobných údajov</a>
+            </p>
+          </section>
+          <section>
+            <h2 class="page-header__headline">
+              Cena
+              <span class="headline-underline"></span>
+            </h2>
+            <ul class="challenge-meta">
+              <li class="challenge-meta__item">
+                <span class="fas fa-tag fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Celková cena</span><br />
+                  <%= `${challenge.price} €` %>
+                </div>
+              </li>
+            </ul>
+            <form id="" class="form form--dark mt-1">
+              <label class="form__label" for="email">Mám zľavový kupón</label>
+              <input
+                class="form__input"
+                type="text"
+                placeholder="Zatiaľ nedostupné"
+                required
+                disabled
+              />
+              <button class="button mt-1" type="submit" disabled>
+                Aktivuj zľavu
+              </button>
+            </form>
+          </section>
+        </div>
+      </div>
+    </header>
+    <%- include('./templates/footer.ejs') -%> <%-
+    include('./templates/scripts.ejs') -%>
+    <script src="/static/js/order.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <%- include('../templates/meta.ejs')-%>
+    <title>OSA Virtual Challenge</title>
+  </head>
+  <body>
+    <header
+      class="page-header <%= `bg-img__${purchaseDetails.challenge.tag}` %>"
+    >
+      <div class="l-page-container">
+        <%- include('../templates/nav.ejs')-%>
+        <div class="grid-columns-2 py-4">
+          <section>
+            <h1 class="page-header__headline">
+              <%= purchaseDetails.challenge.name %>
+              <span class="headline-underline"></span>
+            </h1>
+            <ul class="challenge-meta">
+              <li class="challenge-meta__item">
+                <div class="challenge-meta__text">
+                  <span class="subheading">Platné do:</span><br />
+                  <%= purchaseDetails.deadline.toLocaleDateString('sk-SK') %>
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <div class="challenge-meta__text">
+                  <span class="subheading">Počet aktivít:</span><br />
+                  <%= purchaseDetails.completedActivities.length %> / <%=
+                  purchaseDetails.challenge.activities.length %>
+                </div>
+              </li>
+            </ul>
+            <a class="button mt-1" href="/admin/dashboard"
+              ><span class="fas fa-arrow-left mr-05"></span>Spať na prehľad</a
+            >
+          </section>
+          <section>
+            <h2 class="page-header__headline">
+              Detaily objednávky
+              <span class="headline-underline"></span>
+            </h2>
+            <ul class="challenge-meta">
+              <li class="list__item">
+                <div class="list__text">
+                  <span class="subheading">Kontakt</span><br />
+                  <%= purchaseDetails.user.name %><br />
+                  <%= purchaseDetails.user.email %>
+                </div>
+              </li>
+              <li class="list__item">
+                <div class="list__text">
+                  <span class="subheading">Adresa</span><br />
+                  <%= purchaseDetails.user.adress %><br />
+                  <%= purchaseDetails.user.postCode %>, <%=
+                  purchaseDetails.user.city %>
+                </div>
+              </li>
+              <li class="list__item">
+                <div class="list__text">
+                  <span class="subheading">Číslo objednávky</span><br />
+                  <%= Number(purchaseDetails.id) + 1000 %>
+                </div>
+              </li>
+              <li class="list__item">
+                <div class="list__text">
+                  <span class="subheading">Stav objednávky</span><br />
+                  <% if (purchaseDetails.state == 'Neuhradena') { %> Neuhradená
+                  <% } else if (purchaseDetails.state == 'Zaplatena') { %>
+                  Zaplatená <% } else { %> Dokončená <% } %>
+                  <form id="edit-form">
+                    <select name="state" id="state" required>
+                      <option value="" selected>
+                        --Zmeň status objednávky--
+                      </option>
+                      <option value="Neuhradena">Neuhradená</option>
+                      <option value="Zaplatena">Zaplatená</option>
+                      <option value="Dokoncena">Dokončená</option>
+                    </select>
+                    <br />
+                    <button
+                      class="button mt-1"
+                      type="submit"
+                      data-purchase-id="<%= purchaseDetails.id %>"
+                    >
+                      Upraviť objednávku
+                    </button>
+                  </form>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="bg-basic py-4">
+        <div class="l-page-container">
+          <h2 class="text-center">
+            Nahrané aktivity<span
+              class="headline-underline headline-underline--centered"
+            ></span>
+          </h2>
+          <div class="cards-grid">
+            <% purchaseDetails.completedActivities.forEach(activity => { %>
+            <article
+              id="<%= `activity-${activity.id}` %>"
+              class="activity-card"
+            >
+              <% if (activity.evidence) { %>
+              <a href="<%= activity.evidence %>" target="_blank">
+                <img
+                  class="activity-card__image"
+                  src="<%= activity.evidence %>"
+                />
+              </a>
+              <% } else { %>
+              <img
+                class="activity-card__image activity-card__image--empty"
+                src="https://res.cloudinary.com/osavirtual/image/upload/c_scale,q_auto:eco,w_2000/v1619292994/web/tony-pham-K2xGNNcQn_w-unsplash_mjvoq4.jpg"
+              />
+              <% } %>
+              <div class="activity-card__content">
+                <h3 class="activity-card__title my-1">
+                  <%= activity.activity.name %>
+                  <span
+                    class="headline-underline headline-underline--centered"
+                  ></span>
+                </h3>
+                <div class="my-1">
+                  <span class="subheading">Stav:</span><br />
+                  <strong>
+                    <% if (activity.state == 'kontrola') { %>
+                    <span style="color: orange">Čaká na kontrolu</span> <% }
+                    else if (activity.state == 'schvalena') { %>
+                    <span style="color: green">Schválená</span> <% } else { %>
+                    <span style="color: red">Nespĺňa pravidlá</span> <% } %>
+                  </strong>
+                </div>
+                <div class="my-1">
+                  <span class="subheading">Aktivita nahraná:</span><br />
+                  <%= activity.date?.toLocaleDateString('sk-SK') %><br /><%=
+                  activity.date?.toLocaleTimeString('sk-SK') %>
+                </div>
+                <form class="edit-activity-form">
+                  <select name="activityState" id="activity-state" required>
+                    <option value="" selected>--Zmeň status aktivity--</option>
+                    <option value="kontrola">Čaká na kontrolu</option>
+                    <option value="schvalena">Schválená</option>
+                    <option value="zamietnuta">Nespĺňa pravidlá</option>
+                  </select>
+                  <br />
+                  <button
+                    class="button mt-1"
+                    type="submit"
+                    data-activity-id="<%= activity.id %>"
+                  >
+                    Upraviť aktivitu
+                  </button>
+                </form>
+              </div>
+            </article>
+            <% }) %>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include('../templates/footer.ejs') -%> <%-
+    include('../templates/scripts.ejs') -%>
+    <script type="module" src="/static/js/admin.js"></script>
+  </body>
+</html>

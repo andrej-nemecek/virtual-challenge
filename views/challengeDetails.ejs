@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <%- include('./templates/meta.ejs')-%>
+    <title>OSA Virtual Challenge</title>
+  </head>
+  <body>
+    <header
+      class="page-header <%= `bg-img__${purchaseDetails.challenge.tag}` %>"
+    >
+      <div class="l-page-container">
+        <%- include('./templates/nav.ejs')-%>
+        <div class="grid-columns-2 py-4">
+          <section>
+            <h1 class="page-header__headline">
+              <%= purchaseDetails.challenge.name %>
+              <span class="headline-underline"></span>
+            </h1>
+            <ul class="challenge-meta">
+              <li class="challenge-meta__item">
+                <div class="challenge-meta__text">
+                  <span class="subheading">Platné do:</span><br />
+                  <%= purchaseDetails.deadline.toLocaleDateString('sk-SK') %>
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <div class="challenge-meta__text">
+                  <span class="subheading">Počet aktivít:</span><br />
+                  <%= activities.length %>
+                </div>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2 class="page-header__headline">
+              Detaily objednávky
+              <span class="headline-underline"></span>
+            </h2>
+            <ul class="challenge-meta">
+              <li class="list__item">
+                <div class="list__text">
+                  <span class="subheading">Číslo objednávky</span><br />
+                  <%= Number(purchaseDetails.id) + 1000 %>
+                </div>
+              </li>
+              <li class="list__item">
+                <div class="list__text">
+                  <span class="subheading">Stav objednávky</span><br />
+                  <% if (purchaseDetails.state == 'Neuhradena') { %> Zatiaľ
+                  neuhradená (platby párujeme 2x týždenne) <% } else { %>
+                  Zaplatená <% } %>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="bg-basic py-4">
+        <div class="l-page-container">
+          <h2 class="text-center">
+            Nahraj aktivity<span
+              class="headline-underline headline-underline--centered"
+            ></span>
+          </h2>
+          <div class="cards-grid">
+            <% activities.forEach(activity => { %>
+            <article
+              id="<%= `activity-${activity.id}` %>"
+              class="activity-card"
+            >
+              <% if (activity.evidence) { %>
+              <img
+                class="activity-card__image"
+                src="<%= activity.evidence %>"
+              />
+              <% } else { %>
+              <img
+                class="activity-card__image activity-card__image--empty"
+                src="https://res.cloudinary.com/osavirtual/image/upload/c_scale,q_auto:eco,w_2000/v1619292994/web/tony-pham-K2xGNNcQn_w-unsplash_mjvoq4.jpg"
+              />
+              <% } %>
+              <div class="activity-card__content">
+                <h3 class="activity-card__title my-1">
+                  <%= activity.name %>
+                  <span
+                    class="headline-underline headline-underline--centered"
+                  ></span>
+                </h3>
+                <div class="mb-1">
+                  <span class="subheading">Stav:</span>
+                  <div id="<%= `activity-${activity.id}-state` %>">
+                    <strong>
+                      <% if (activity.state == 'kontrola') { %>
+                      <span style="color: orange">Čaká na kontrolu</span> <% }
+                      else if (activity.state == 'schvalena') { %>
+                      <span style="color: green">Schválená</span> <% } else if
+                      (activity.state == 'zamietnuta') { %>
+                      <span style="color: red">Nespĺňa pravidlá</span> <% } else
+                      { %> Zatiaľ nesplnená <% } %>
+                    </strong>
+                  </div>
+                </div>
+                <% if(activity.date) { %>
+                <div class="my-1">
+                  <span class="subheading">Aktivita nahraná:</span><br />
+                  <%= activity.date?.toLocaleDateString('sk-SK') %><br /><%=
+                  activity.date?.toLocaleTimeString('sk-SK') %>
+                </div>
+                <% } %>
+                <form
+                  class="file-upload"
+                  method="post"
+                  enctype="multipart/form-data"
+                >
+                  <input
+                    name="activityId"
+                    type="hidden"
+                    value="<%= activity.id %>"
+                  />
+                  <input
+                    name="purchaseId"
+                    type="hidden"
+                    value="<%= purchaseDetails.id %>"
+                  />
+                  <label
+                    class="file-upload__label mb-1"
+                    for="<%= `file-input-${activity.id}` %>"
+                  >
+                    <% if (activity.evidence) { %>
+                    <span class="fas fa-edit mr-05"></span>Uprav fotku <% } else
+                    { %> <span class="fas fa-upload mr-05"></span>Nahraj fotku
+                    <% } %>
+                  </label>
+                  <input
+                    id="<%= `file-input-${activity.id}` %>"
+                    class="file-upload__input"
+                    type="file"
+                    name="file"
+                  />
+                  <button
+                    class="button file-upload__button file-upload__button--hidden"
+                    type="submit"
+                  >
+                    Nahrať
+                  </button>
+                </form>
+              </div>
+            </article>
+            <% }) %>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include('./templates/footer.ejs') -%> <%-
+    include('./templates/scripts.ejs') -%>
+    <script src="/static/js/upload-activity.js" type="module"></script>
+  </body>
+</html>

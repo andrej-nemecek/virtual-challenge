@@ -1,0 +1,187 @@
+.l-page-container {
+  max-width: 1140px;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.py-8 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.py-4 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.py-2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-05 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.pt-1 {
+  padding-top: 1rem;
+}
+
+.pb-1 {
+  padding-bottom: 1rem;
+}
+
+.my-4 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.my-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-05 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-025 {
+  margin-bottom: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.ml-05 {
+  margin-left: 0.5rem;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+.mr-05 {
+  margin-right: 0.5rem;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+@media (max-width: 992px) {
+  .md-mt-1 {
+    margin-top: 1rem;
+  }
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.headline-underline {
+  display: block;
+  height: 0.3125rem;
+  background-color: $primary;
+  width: 25%;
+  margin-top: 0.3125rem;
+}
+
+.headline-underline--centered {
+  margin: 0 auto;
+}
+
+.bg-basic {
+  background-color: $basic-background;
+}
+
+.heading-small {
+  font-size: 1.5rem;
+}
+
+.block-centered {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-small {
+  font-size: 0.8rem;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-light {
+  color: #fff;
+}
+
+.text-dark {
+  color: #000;
+}
+
+.text-max-width {
+  max-width: 70ch;
+}
+
+.text-highlighted {
+  color: $primary;
+}
+
+.mobile-menu-no-scroll {
+  overflow: unset;
+}
+
+@media (max-width: 992px) {
+  .mobile-menu-no-scroll {
+    overflow: hidden;
+  }
+}
+
+.flex-columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-columns-2 {
+  display: grid;
+  column-gap: 4rem;
+  row-gap: 4rem;
+  /* FIX for this bug https://github.com/nolimits4web/swiper/issues/2914 (fr cant be used with swiper) */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+@media (max-width: 768px) {
+  .grid-columns-2 {
+    /* FIX for this bug https://github.com/nolimits4web/swiper/issues/2914 (fr cant be used with swiper) */
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

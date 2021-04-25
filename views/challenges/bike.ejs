@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <%- include('../templates/meta.ejs')-%>
+    <link rel="stylesheet" href="/static/swiper/swiper-bundle.min.css" />
+    <title>OSA Virtual Challenge</title>
+  </head>
+  <body>
+    <header class="page-header bg-img__bike">
+      <div class="l-page-container">
+        <%- include('../templates/nav.ejs')-%>
+        <div class="py-4 grid-columns-2">
+          <section>
+            <h1 class="page-header__headline">
+              Balík - Bike
+              <span class="headline-underline"></span>
+            </h1>
+            <p class="page-header__text">
+              Naozajstná previerka mojej vôle a síl. A aj zadku.
+            </p>
+            <ul class="challenge-meta">
+              <li class="challenge-meta__item">
+                <span class="fas fa-biking fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  Bicykel
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-tag fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Cena</span><br />
+                  80 €
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-trophy fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Počet aktivít</span><br />
+                  10
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-heartbeat fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Aktivity z Basic - Bike</span><br />
+                  20 km
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-heartbeat fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Aktivity z Hobby - Bike</span><br />
+                  25 km / 35 km / 45 km
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-heartbeat fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Aktivity z Hard - Bike</span><br />
+                  50 km / 60 km / 70 km<br />
+                  80 km / 90 km / 100 km
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-hourglass-half fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Čas na zvládnutie</span><br />
+                  60 dní
+                </div>
+              </li>
+            </ul>
+            <a href="/objednavka/vyzva/11" class="button mt-1"
+              >Zapojiť sa do výzvy</a
+            >
+          </section>
+          <section class="gifts text-light">
+            <div class="text-center">
+              <!-- Slider main container -->
+              <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <img
+                      class="gifts__image"
+                      src="https://res.cloudinary.com/osavirtual/image/upload/v1612457452/odmeny/BikeBasic_xrqhnj.png"
+                      alt="Medaila Basic-Bike"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      class="gifts__image"
+                      src="https://res.cloudinary.com/osavirtual/image/upload/v1612457454/odmeny/BikeHobby_vhssrc.png"
+                      alt="Medaila Hobby-Bike"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      class="gifts__image"
+                      src="https://res.cloudinary.com/osavirtual/image/upload/v1612457453/odmeny/BikeHard_nyinbh.png"
+                      alt="Medaila Hard-Bike"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      class="gifts__image"
+                      src="https://res.cloudinary.com/osavirtual/image/upload/t_gifts/v1613050193/odmeny/dres_ovch_p9ysj3.png"
+                      alt="Cyklistický dres"
+                    />
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
+            <h2 class="gifts__title">Odmeny:</h2>
+            <ul class="gifts__list fa-ul">
+              <li class="gifts__item">
+                <div class="gifts__highlight">
+                  <span class="fa-li">
+                    <span class="fas fa-check"></span>
+                  </span>
+                  10% zľava na štandardnom poplatku za jednotlivé výzvy
+                </div>
+              </li>
+              <li class="gifts__item">
+                <div class="gifts__highlight">
+                  <span class="fa-li">
+                    <span class="fas fa-check"></span>
+                  </span>
+                  3 medaile v darčekovej pamätnej plakete
+                </div>
+                <div class="gifts__description">
+                  v hodnote 40 € (medaile, balenie, poštovné)
+                </div>
+              </li>
+              <li class="gifts__item">
+                <div class="gifts__highlight">
+                  <span class="fa-li">
+                    <span class="fas fa-check"></span>
+                  </span>
+                  Darček (malé prekvapenie na pamiatku)
+                </div>
+                <div class="gifts__description">v hodnote 10 €</div>
+              </li>
+              <li class="gifts__item">
+                <div class="gifts__highlight">
+                  <span class="fa-li">
+                    <span class="fas fa-check"></span>
+                  </span>
+                  Cyklistický dres s insígniami OSA VIRTUAL CHALLENGE 2021
+                </div>
+                <div class="gifts__description">v hodnote 35 €</div>
+              </li>
+              <li class="gifts__item">
+                <div class="gifts__highlight">
+                  <span class="fa-li">
+                    <span class="fas fa-check"></span>
+                  </span>
+                  20% zľava na ďalšie odevy z portfólia OSA VIRTUAL CHALLENGE
+                  2021
+                </div>
+              </li>
+              <li class="gifts__item">
+                <div class="gifts__highlight">
+                  <span class="fa-li">
+                    <span class="fas fa-check"></span>
+                  </span>
+                  Podporíš športový rozvoj detí v OSA Športovej akadémii
+                </div>
+                <div class="gifts__description">
+                  v hodnote 2 € zo štartovného
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="my-4">
+        <div class="l-page-container">
+          <h2 class="text-center">
+            Informácie o výzve
+            <span
+              class="headline-underline headline-underline--centered"
+            ></span>
+          </h2>
+          <p>
+            Ak nevieš čo je Gran Fondo, zapoj sa do tejto cyklistickej výzvy a
+            na konci Tvoje telo, nohy a zadok pochopia. 100 km naraz na bicykli
+            zdolávajú pravoverní cyklisti zľahka, no veríme že túto výzvu si
+            vyberú hlavne tí, ktorí o tom doteraz len snívali, či hľadali
+            odvahu. Naplánuj si jazdy tak, aby tá posledná stála za to! Ideálne
+            na konci s chutným jedlom a pohostením tak, ako si to Gran Fondo
+            vyžaduje a Tvoja telo zaslúži.
+          </p>
+        </div>
+      </section>
+      <%- include('../templates/rules.ejs')-%>
+    </main>
+    <%- include('../templates/footer.ejs') -%> <%-
+    include('../templates/scripts.ejs') -%>
+    <script type="module" src="/static/swiper/swiper-init.js"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <%- include('./templates/meta.ejs')-%>
+    <title>OSA Virtual Challenge</title>
+  </head>
+  <body>
+    <header class="page-header page-header--bg-homepage">
+      <div class="l-page-container">
+        <%- include('./templates/nav.ejs')-%>
+        <div class="grid-columns-2 py-8">
+          <section>
+            <h1 class="page-header__headline">
+              Prihlásenie
+              <span class="headline-underline"></span>
+            </h1>
+            <form
+              id="login-form"
+              class="form form--dark"
+              action="/prihlasenie"
+              method="post"
+            >
+              <label class="form__label" for="email">E-mail</label>
+              <input
+                class="form__input"
+                type="email"
+                name="email"
+                id="email"
+                required
+              />
+              <label class="form__label" for="password">Heslo</label>
+              <input
+                class="form__input"
+                type="password"
+                name="password"
+                id="password"
+                required
+              />
+              <button class="button mt-1" type="submit">Prihlásiť sa</button>
+            </form>
+          </section>
+          <section class="text-center">
+            <h2 class="page-header__headline">
+              Nemáš účet ?
+              <span
+                class="headline-underline headline-underline--centered"
+              ></span>
+            </h2>
+            <a id="registration-link" href="/registracia" class="button"
+              >Zaregistruj sa</a
+            >
+          </section>
+        </div>
+      </div>
+    </header>
+    <%- include('./templates/footer.ejs') -%> <%-
+    include('./templates/scripts.ejs') -%>
+    <script src="/static/js/login.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <%- include('./templates/meta.ejs')-%>
+    <title>OSA Virtual Challenge</title>
+  </head>
+  <body>
+    <header class="page-header page-header--bg-homepage">
+      <div class="l-page-container">
+        <%- include('./templates/nav.ejs')-%>
+        <section class="py-4 text-light">
+          <h1 class="page-header__headline">
+            Úspešne si sa zapojil do výzvy
+            <span class="headline-underline"></span>
+          </h1>
+          <p class="page-header__text">
+            Platobné údaje a detail objednávky sme poslali aj na tvoj e-mail.
+          </p>
+          <a class="button" href="<%= `/ucet/vyzvy/${purchaseDetails.id}` %>">
+            Pokračovať
+          </a>
+        </section>
+      </div>
+    </header>
+    <main>
+      <div class="l-page-container">
+        <div class="grid-columns-2 py-4">
+          <section class="text-dark">
+            <h2>
+              Platobné údaje
+              <span class="headline-underline"></span>
+            </h2>
+            <ul class="list">
+              <li class="list__item">
+                <div class="list__text">
+                  <span class="subheading">IBAN</span><br />
+                  SK96 0900 0000 0050 5114 8921
+                </div>
+              </li>
+              <li class="list__item">
+                <div class="list__text">
+                  <span class="subheading">Variabilný symbol</span><br />
+                  <%= Number(purchaseDetails.id) + 1000 %><br />
+                </div>
+              </li>
+              <li class="list__item">
+                <div class="list__text">
+                  <span class="subheading">Cena</span><br />
+                  <%= `${purchaseDetails.finalPrice} €` %><br />
+                </div>
+              </li>
+            </ul>
+          </section>
+          <section class="text-dark">
+            <h2>
+              Detaily objednávky
+              <span class="headline-underline"></span>
+            </h2>
+            <ul class="list">
+              <li class="list__item">
+                <div class="list__text">
+                  <span class="subheading">Číslo objednávky</span><br />
+                  <%= Number(purchaseDetails.id) + 1000 %><br />
+                </div>
+              </li>
+              <li class="list__item">
+                <div class="list__text">
+                  <span class="subheading">Stav objednávky</span><br />
+                  <% if (purchaseDetails.state == 'Neuhradena') { %> Zatiaľ
+                  neuhradená (platby párujeme 2x týždenne) <% } else { %>
+                  Zaplatená <% } %>
+                </div>
+              </li>
+              <li class="list__item">
+                <div class="list__text">
+                  <span class="subheading">Zvolená výzva</span><br />
+                  <%= purchaseDetails.challenge.name %>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+    <%- include('./templates/footer.ejs') -%> <%-
+    include('./templates/scripts.ejs') -%>
+  </body>
+</html>

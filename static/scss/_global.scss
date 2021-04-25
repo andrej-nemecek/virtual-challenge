@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 2.2rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+.subheading {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.link {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &--light {
+    color: $text-light;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &--dark {
+    color: $text-dark;
+    text-decoration: underline;
+  }
+}
+
+.button {
+  padding: 0.8rem 1.3rem;
+  background-color: $primary;
+  color: $text-dark;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: $default-line-height;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+
+  &--block {
+    display: block;
+  }
+
+  &:hover {
+    color: $text-dark;
+  }
+}
+
+a[disabled],
+button[disabled] {
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
+}
+
+#scroll-top {
+  cursor: pointer;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.7rem 1rem;
+  border-radius: 0.15rem;
+  color: $text-light;
+  display: none;
+  z-index: 2;
+
+  &:hover {
+    background-color: $primary;
+    color: $text-dark;
+  }
+}
+
+.form {
+  &__label {
+    display: block;
+    font-size: 1.2rem;
+  }
+
+  &__input {
+    display: block;
+    padding: 0.7rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 2px solid #eee;
+  }
+
+  &__input:focus {
+    border: 2px solid $primary;
+    outline: none;
+  }
+
+  &--dark {
+    color: $text-light;
+  }
+}
+
+.alert {
+  border: 1px solid;
+  padding: 0.5rem 1rem;
+
+  &--error {
+    color: #ffffff;
+    background-color: #bd0000;
+    border-color: #a80000;
+  }
+}
+
+.file-upload {
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    border: 0.2rem solid $primary;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    word-break: break-all;
+    cursor: pointer;
+  }
+
+  &__label:hover {
+    background: $primary;
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+  }
+
+  &__button--hidden {
+    display: none;
+  }
+}

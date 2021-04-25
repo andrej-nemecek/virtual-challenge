@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <%- include('../templates/meta.ejs')-%>
+    <link rel="stylesheet" href="/static/swiper/swiper-bundle.min.css" />
+    <title>OSA Virtual Challenge</title>
+  </head>
+  <body>
+    <header class="page-header bg-img__basic-hike">
+      <div class="l-page-container">
+        <%- include('../templates/nav.ejs')-%>
+        <div class="py-4 grid-columns-2">
+          <section>
+            <h1 class="page-header__headline">
+              Basic - Hike
+              <span class="headline-underline"></span>
+            </h1>
+            <p class="page-header__text">
+              Vyber sa s nami na relaxačnú túru tam, kde to máš rád.
+            </p>
+            <ul class="challenge-meta">
+              <li class="challenge-meta__item">
+                <span class="fas fa-hiking fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  Turistika
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-tag fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Cena</span><br />
+                  20 €
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-heartbeat fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Vzdialenosti aktivít</span><br />
+                  10 km
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-medal fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Počet medailí</span><br />
+                  100ks
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-hourglass-half fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Čas na zvládnutie</span><br />
+                  14 dní
+                </div>
+              </li>
+            </ul>
+            <a href="/objednavka/vyzva/3" class="button mt-1"
+              >Zapojiť sa do výzvy</a
+            >
+          </section>
+          <section class="gifts text-light">
+            <div class="text-center">
+              <!-- Slider main container -->
+              <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <img
+                      class="gifts__image"
+                      src="https://res.cloudinary.com/osavirtual/image/upload/v1612457454/odmeny/HikeBasic_kuzdit.png"
+                      alt="Medaila Basic-Hike"
+                    />
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
+            <h2 class="gifts__title">Odmeny:</h2>
+            <ul class="gifts__list fa-ul">
+              <li class="gifts__item">
+                <div class="gifts__highlight">
+                  <span class="fa-li">
+                    <span class="fas fa-check"></span>
+                  </span>
+                  Medaila + darčekové pamätné balenie
+                </div>
+                <div class="gifts__description">
+                  v hodnote 14 € (medaila, balenie, poštovné)
+                </div>
+              </li>
+              <li class="gifts__item">
+                <div class="gifts__highlight">
+                  <span class="fa-li">
+                    <span class="fas fa-check"></span>
+                  </span>
+                  Darček (malé prekvapenie na pamiatku)
+                </div>
+                <div class="gifts__description">v hodnote 3 €</div>
+              </li>
+              <li class="gifts__item">
+                <div class="gifts__highlight">
+                  <span class="fa-li">
+                    <span class="fas fa-check"></span>
+                  </span>
+                  Podporíš športový rozvoj detí v OSA Športovej akadémii
+                </div>
+                <div class="gifts__description">
+                  v hodnote 2 € zo štartovného
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="my-4">
+        <div class="l-page-container">
+          <h2 class="text-center">
+            Informácie o výzve
+            <span
+              class="headline-underline headline-underline--centered"
+            ></span>
+          </h2>
+          <p>
+            Krásny čas s deťmi, či priateľmi a rodinou v prírode patrí k
+            najkrajším chvíľam v živote. Spojte ho s touto výzvou a spojíte ho
+            tak s možnosťou pomôcť a podporiť rozvoj pohybu nielen Vašich detí.
+            A okrem zdravého pohybu pre seba urobíte niečo aj pre deti u nás.
+            Krásna medaila a darček od nás bude len bonusom.
+          </p>
+        </div>
+      </section>
+      <%- include('../templates/rules.ejs')-%>
+    </main>
+    <%- include('../templates/footer.ejs') -%> <%-
+    include('../templates/scripts.ejs') -%>
+    <script type="module" src="/static/swiper/swiper-init.js"></script>
+  </body>
+</html>

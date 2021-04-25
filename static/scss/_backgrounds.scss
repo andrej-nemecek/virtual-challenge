@@ -1,0 +1,298 @@
+.section__bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/c_scale,q_auto:eco,w_2000/v1619292994/web/tony-pham-K2xGNNcQn_w-unsplash_mjvoq4.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.bg-card__basic-run {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910048/web/basic-run.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910048/web/basic-run.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__basic-bike {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910104/web/basic-bike.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910104/web/basic-bike.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__basic-hike {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910075/web/basic-hike.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910075/web/basic-hike.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__hobby-run {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910067/web/hobby-run.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910067/web/hobby-run.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__hobby-bike {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910124/web/hobby-bike.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910124/web/hobby-bike.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__hobby-hike {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910111/web/hobby-hike.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910111/web/hobby-hike.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__hard-run {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910027/web/hard-run.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910027/web/hard-run.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__hard-bike {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910119/web/hard-bike.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910119/web/hard-bike.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__hard-hike {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910086/web/hard-hike.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910086/web/hard-hike.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__run {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910099/web/run.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910099/web/run.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__bike {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910119/web/hard-bike.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910119/web/hard-bike.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__hike {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910111/web/hobby-hike.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910111/web/hobby-hike.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__basic {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910118/web/basic.jpg')
+      center right / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910118/web/basic.jpg')
+        center right / cover no-repeat;
+  }
+}
+
+.bg-card__hobby {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910122/web/hobby.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910122/web/hobby.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__hard {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910027/web/hard-run.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-grid-challenge/v1610910027/web/hard-run.jpg')
+        center / cover no-repeat;
+  }
+}
+
+.bg-card__complete {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910119/web/hard-bike.jpg')
+      center / cover no-repeat;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(104, 105, 0, 0.65)),
+      url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910119/web/hard-bike.jpg')
+        center / cover no-repeat;
+  }
+}
+
+/* --- Full backgrounds --- */
+
+.bg-img__basic-run {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910048/web/basic-run.jpg')
+      center / cover no-repeat;
+}
+
+.bg-img__basic-bike {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910104/web/basic-bike.jpg')
+      left center / cover no-repeat;
+}
+
+.bg-img__basic-hike {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910075/web/basic-hike.jpg')
+      right center / cover no-repeat;
+}
+
+.bg-img__hobby-run {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910067/web/hobby-run.jpg')
+      right center / cover no-repeat;
+}
+
+.bg-img__hobby-bike {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910124/web/hobby-bike.jpg')
+      center / cover no-repeat;
+}
+
+.bg-img__hobby-hike {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910111/web/hobby-hike.jpg')
+      center / cover no-repeat;
+}
+
+.bg-img__hard-run {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910027/web/hard-run.jpg')
+      center / cover no-repeat;
+}
+
+.bg-img__hard-bike {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910119/web/hard-bike.jpg')
+      center / cover no-repeat;
+}
+
+.bg-img__hard-hike {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910086/web/hard-hike.jpg')
+      center / cover no-repeat;
+}
+
+.bg-img__run {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910099/web/run.jpg')
+      center / cover no-repeat;
+}
+
+.bg-img__bike {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910119/web/hard-bike.jpg')
+      center / cover no-repeat;
+}
+
+.bg-img__hike {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910111/web/hobby-hike.jpg')
+      center / cover no-repeat;
+}
+
+.bg-img__basic {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910118/web/basic.jpg')
+      center right / cover no-repeat;
+}
+
+.bg-img__hobby {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910122/web/hobby.jpg')
+      center / cover no-repeat;
+}
+
+.bg-img__hard {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910027/web/hard-run.jpg')
+      center / cover no-repeat;
+}
+
+.bg-img__complete {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://res.cloudinary.com/osavirtual/image/upload/t_bg-img/v1610910119/web/hard-bike.jpg')
+      center / cover no-repeat;
+}

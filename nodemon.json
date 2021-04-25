@@ -1,0 +1,7 @@
+{
+    "watch": [
+        "./dist/*",
+        "./views/*"
+    ],
+    "ext": "js, css, html, ejs"
+}

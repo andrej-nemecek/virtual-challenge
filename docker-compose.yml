@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  database:
+    image: mysql:8
+    ports:
+      - 3307:3306
+    volumes:
+      - osa-virtual-challenge-db-volume:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+  backend:
+    build: .
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL
+      - PORT
+      - URL
+      - JWT_SECRET
+      - CLOUDINARY_API_KEY
+      - CLOUDINARY_API_SECRET
+      - CLOUDINARY_CLOUD_NAME
+      - MAIL_PASSWORD
+      - MAIL_USER
+    restart: always
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      - database
+
+volumes:
+  osa-virtual-challenge-db-volume:

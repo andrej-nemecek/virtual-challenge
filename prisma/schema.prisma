@@ -1,0 +1,108 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["nativeTypes"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  Int                 @id @default(autoincrement()) @db.UnsignedInt
+  email               String              @unique @db.VarChar(63)
+  password            String              @db.VarChar(127)
+  role                Int                 @db.Int
+  name                String              @db.VarChar(63)
+  adress              String              @db.VarChar(63)
+  city                String              @db.VarChar(63)
+  postCode            String              @db.VarChar(31)
+  completedActivities CompletedActivity[]
+  purchases           Purchase[]
+}
+
+model Activity {
+  id                  Int                 @id @default(autoincrement()) @db.UnsignedInt
+  challengeId         Int                 @db.UnsignedInt
+  name                String              @db.VarChar(255)
+  challenge           Challenge           @relation(fields: [challengeId], references: [id])
+  completedActivities CompletedActivity[]
+
+  @@index([challengeId], name: "challengeId")
+}
+
+model Challenge {
+  id         Int        @id @default(autoincrement()) @db.UnsignedInt
+  name       String     @db.VarChar(63)
+  capacity   Int        @db.UnsignedInt
+  tag        String     @db.VarChar(63)
+  timePeriod Int        @db.UnsignedInt
+  kilometers Int        @db.UnsignedInt
+  price      Decimal    @db.Decimal(6, 2)
+  activities Activity[]
+  purchases  Purchase[]
+}
+
+model Product {
+  id                Int                @id @default(autoincrement()) @db.UnsignedInt
+  name              String             @db.VarChar(63)
+  price             Decimal            @db.Decimal(6, 2)
+  purchasedProducts PurchasedProduct[]
+}
+
+model Purchase {
+  id                  Int                 @id @default(autoincrement()) @db.UnsignedInt
+  userId              Int                 @db.UnsignedInt
+  challengeId         Int                 @db.UnsignedInt
+  date                DateTime            @default(now()) @db.DateTime(0)
+  deadline            DateTime            @db.DateTime(0)
+  finalPrice          Decimal             @db.Decimal(6, 2)
+  state               Purchase_state
+  challenge           Challenge           @relation(fields: [challengeId], references: [id])
+  user                User                @relation(fields: [userId], references: [id])
+  completedActivities CompletedActivity[]
+  purchasedProducts   PurchasedProduct[]
+
+  @@unique([userId, challengeId], name: "userId")
+  @@index([challengeId], name: "challengeId")
+}
+
+model CompletedActivity {
+  id         Int                     @id @default(autoincrement()) @db.UnsignedInt
+  userId     Int                     @db.UnsignedInt
+  activityId Int                     @db.UnsignedInt
+  date       DateTime                @db.DateTime(0)
+  evidence   String                  @db.VarChar(255)
+  state      CompletedActivity_state @default(kontrola)
+  purchaseId Int                     @db.UnsignedInt
+  activity   Activity                @relation(fields: [activityId], references: [id])
+  purchase   Purchase                @relation(fields: [purchaseId], references: [id])
+  user       User                    @relation(fields: [userId], references: [id])
+
+  @@unique([activityId, purchaseId], name: "unique_activityId_purchaseId")
+  @@index([purchaseId], name: "purchaseId")
+  @@index([userId], name: "userId")
+}
+
+model PurchasedProduct {
+  id         Int      @id @default(autoincrement()) @db.UnsignedInt
+  purchaseId Int      @db.UnsignedInt
+  productId  Int      @db.UnsignedInt
+  product    Product  @relation(fields: [productId], references: [id])
+  purchase   Purchase @relation(fields: [purchaseId], references: [id])
+
+  @@index([productId], name: "productId")
+  @@index([purchaseId], name: "purchaseId")
+}
+
+enum Purchase_state {
+  Neuhradena @map("Zatiaľ neuhradená")
+  Zaplatena @map("Zaplatená")
+  Dokoncena @map("Dokončená")
+}
+
+enum CompletedActivity_state {
+  kontrola
+  schvalena
+  zamietnuta
+}

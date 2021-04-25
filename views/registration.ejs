@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <%- include('./templates/meta.ejs')-%>
+    <title>OSA Virtual Challenge</title>
+  </head>
+  <body>
+    <header class="page-header page-header--bg-homepage">
+      <div class="l-page-container">
+        <%- include('./templates/nav.ejs')-%>
+        <div class="grid-columns-2 py-8">
+          <section>
+            <h1 class="page-header__headline">
+              Registrácia
+              <span class="headline-underline"></span>
+            </h1>
+            <form
+              id="registration-form"
+              class="form form--dark"
+              action="/registracia"
+              method="post"
+            >
+              <label class="form__label" for="email">E-mail</label>
+              <input
+                class="form__input"
+                type="email"
+                name="email"
+                placeholder="mail@priklad.sk"
+                id="email"
+                required
+              />
+              <label class="form__label" for="password">Heslo</label>
+              <input
+                class="form__input"
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Zadaj aspoň 6 znakov"
+                minlength="6"
+                required
+              />
+              <label class="form__label" for="name">Meno a priezvisko</label>
+              <input
+                class="form__input"
+                name="name"
+                id="name"
+                placeholder="Ján Pekný"
+                required
+              />
+              <label class="form__label" for="adress">Adresa</label>
+              <input class="form__input" name="adress" id="adress" required />
+              <label class="form__label" for="city">Mesto</label>
+              <input class="form__input" name="city" id="city" required />
+              <label class="form__label" for="postcode">PSČ</label>
+              <input
+                class="form__input"
+                name="postCode"
+                id="postcode"
+                required
+              />
+              <input id="terms-privacy" type="checkbox" required />
+              <label for="terms-privacy"
+                >Suhlásím s
+                <a class="link" href="/podmienky">všeobecnými podmienkami</a> a
+                <a class="link" href="/gdpr">ochranou osobných údajov</a></label
+              >
+              <button class="button button--block mt-1" type="submit">
+                Registrovať sa
+              </button>
+            </form>
+          </section>
+          <section class="text-center">
+            <h2 class="page-header__headline">
+              Už mám účet
+              <span
+                class="headline-underline headline-underline--centered"
+              ></span>
+            </h2>
+            <a id="login-link" href="/prihlasenie" class="button"
+              >Prihlásiť sa</a
+            >
+          </section>
+        </div>
+      </div>
+    </header>
+    <%- include('./templates/footer.ejs') -%> <%-
+    include('./templates/scripts.ejs') -%>
+    <script src="/static/js/registration.js" type="module"></script>
+  </body>
+</html>

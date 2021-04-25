@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <%- include('../templates/meta.ejs')-%>
+    <link rel="stylesheet" href="/static/swiper/swiper-bundle.min.css" />
+    <title>OSA Virtual Challenge</title>
+  </head>
+  <body>
+    <header class="page-header bg-img__hard-hike">
+      <div class="l-page-container">
+        <%- include('../templates/nav.ejs')-%>
+        <div class="py-4 grid-columns-2">
+          <section>
+            <h1 class="page-header__headline">
+              Hard - Hike
+              <span class="headline-underline"></span>
+            </h1>
+            <p class="page-header__text">
+              Ukáž nám krásy našich hôr, kde rád tráviš čas a relaxuješ.
+            </p>
+            <ul class="challenge-meta">
+              <li class="challenge-meta__item">
+                <span class="fas fa-hiking fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  Turistika
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-tag fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Cena</span><br />
+                  40 €
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-heartbeat fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Vzdialenosti aktivít</span><br />
+                  5 km / 10 km / 15 km <br />
+                  20 km / 25 km / 30 km
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-medal fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Počet medailí</span><br />
+                  50ks
+                </div>
+              </li>
+              <li class="challenge-meta__item">
+                <span class="fas fa-hourglass-half fa-lg fa-fw mr-05"></span>
+                <div class="challenge-meta__text challenge-meta__text--strong">
+                  <span class="subheading">Čas na zvládnutie</span><br />
+                  60 dní
+                </div>
+              </li>
+            </ul>
+            <a href="/objednavka/vyzva/9" class="button mt-1"
+              >Zapojiť sa do výzvy</a
+            >
+          </section>
+          <section class="gifts text-light">
+            <div class="text-center">
+              <!-- Slider main container -->
+              <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <img
+                      class="gifts__image"
+                      src="https://res.cloudinary.com/osavirtual/image/upload/v1612457457/odmeny/HikeHard_taoi8u.png"
+                      alt="Medaila Hard-Hike"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      class="gifts__image"
+                      src="https://res.cloudinary.com/osavirtual/image/upload/v1612965545/odmeny/OSA_VirtualChallenge_Tricka_Hike_kmo7oc.png"
+                      alt="Tričko Hike"
+                    />
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
+            <h2 class="gifts__title">Odmeny:</h2>
+            <ul class="gifts__list fa-ul">
+              <li class="gifts__item">
+                <div class="gifts__highlight">
+                  <span class="fa-li">
+                    <span class="fas fa-check"></span>
+                  </span>
+                  Medaila + darčekové pamätné balenie
+                </div>
+                <div class="gifts__description">
+                  v hodnote 14 € (medaila, balenie, poštovné)
+                </div>
+              </li>
+              <li class="gifts__item">
+                <div class="gifts__highlight">
+                  <span class="fa-li">
+                    <span class="fas fa-check"></span>
+                  </span>
+                  Tričko s insígniami OSA VIRTUAL CHALLENGE
+                </div>
+                <div class="gifts__description">v hodnote 10 €</div>
+              </li>
+              <li class="gifts__item">
+                <div class="gifts__highlight">
+                  <span class="fa-li">
+                    <span class="fas fa-check"></span>
+                  </span>
+                  Podporíš športový rozvoj detí v OSA Športovej akadémii
+                </div>
+                <div class="gifts__description">
+                  v hodnote 2 € zo štartovného
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="my-4">
+        <div class="l-page-container">
+          <h2 class="text-center">
+            Informácie o výzve
+            <span
+              class="headline-underline headline-underline--centered"
+            ></span>
+          </h2>
+          <p>
+            Ak vládneš túto výzvu a všetky aktivity za 2 mesiace sú len dve
+            možnosti. Buď si pravoverný turista, alebo si práve vykročil tou
+            správnou nohou sa ním stať. Vyhľadaj si najbližší oddiel a pridaj sa
+            k turistom s rovnakým srdcom, ako máš Ty. No možno len chodíš rád
+            sám do prírody. V každom prípade si to uži naplno.
+          </p>
+        </div>
+      </section>
+      <%- include('../templates/rules.ejs')-%>
+    </main>
+    <%- include('../templates/footer.ejs') -%> <%-
+    include('../templates/scripts.ejs') -%>
+    <script type="module" src="/static/swiper/swiper-init.js"></script>
+  </body>
+</html>

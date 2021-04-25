@@ -1,0 +1,52 @@
+<nav class="page-navbar">
+  <a href="/">
+    <img
+      class="page-navbar__logo"
+      src="/static/images/virtual_challenge_logo.png"
+      alt="OSA Virtual Challenge"
+      width="1024"
+      height="915"
+    />
+  </a>
+  <ul class="nav-list nav-list--responsive">
+    <li class="nav-list__item">
+      <a href="/#ako-sa-zapojit" class="nav-list__link">Ako sa zapojiť</a>
+    </li>
+    <li class="nav-list__item">
+      <a href="/#vyzvy" class="nav-list__link">Výzvy</a>
+    </li>
+    <li class="nav-list__item">
+      <a href="/#baliky" class="nav-list__link">Balíky</a>
+    </li>
+    <% if (loggedUser == null) { %>
+    <li class="nav-list__item">
+      <a href="/prihlasenie" class="button">Prihlásiť sa</a>
+    </li>
+    <% } %> <% if (loggedUser) { %>
+    <li class="nav-list__item drop-down">
+      <a href="#" class="nav-list__link">
+        <span class="far fa-user-circle mr-05"></span>
+        <%= loggedUser.userName.split(' ')[0] %>
+        <span class="fas fa-caret-down ml-05"></span>
+      </a>
+      <ul class="drop-down__menu mb-05 drop-down__menu--closed">
+        <li class="drop-down__item">
+          <a href="/ucet/vyzvy" class="nav-list__link">Profil</a>
+        </li>
+        <li class="drop-down__item">
+          <a href="/odhlasenie" class="nav-list__link">Odhlásiť</a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-list__item">
+      <a href="/ucet/vyzvy" class="button md-mt-1">Moje výzvy</a>
+    </li>
+    <% } %>
+  </ul>
+  <div class="mobile-nav-icon">
+    <div class="mobile-nav-icon__line"></div>
+    <div class="mobile-nav-icon__line"></div>
+    <div class="mobile-nav-icon__line"></div>
+  </div>
+  <a id="scroll-top">&#x25b2;</a>
+</nav>

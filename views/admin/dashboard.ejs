@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <%- include('../templates/meta.ejs')-%>
+    <title>OSA Virtual Challenge</title>
+  </head>
+  <body>
+    <header class="page-header page-header--bg-homepage">
+      <div class="l-page-container">
+        <%- include('../templates/nav.ejs')-%>
+        <section class="py-4 text-light">
+          <h1 class="page-header__headline">
+            Admin dashboard
+            <span class="headline-underline"></span>
+          </h1>
+          <p class="page-header__text">
+            Prehľad všetkých objednávok a splnených výziev.
+          </p>
+        </section>
+      </div>
+    </header>
+    <main>
+      <div class="l-page-container">
+        <div class="py-4">
+          <section class="text-dark">
+            <table class="dashboard-table">
+              <thead class="dashboard-table__head">
+                <tr>
+                  <th class="dashboard-table__cell">Objednávka</th>
+                  <th class="dashboard-table__cell">Používateľ</th>
+                  <th class="dashboard-table__cell">Adresa</th>
+                  <th class="dashboard-table__cell">Stav objednávky</th>
+                  <th class="dashboard-table__cell">Splnené výzvy</th>
+                  <th class="dashboard-table__cell">Detaily</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% purchases.forEach(purchase => { %>
+                <tr class="dashboard-table__row">
+                  <td class="dashboard-table__cell">
+                    <%= purchase.id + 1000 %><br />
+                    <%= purchase.challenge.name %>
+                  </td>
+                  <td class="dashboard-table__cell">
+                    <%= purchase.user.name %><br /><%= purchase.user.email %>
+                  </td>
+                  <td class="dashboard-table__cell">
+                    <%= purchase.user.adress %><br />
+                    <%= purchase.user.postCode %>, <%= purchase.user.city %>
+                  </td>
+                  <td class="dashboard-table__cell">
+                    <% if (purchase.state == 'Neuhradena') { %> Neuhradená <% }
+                    else if (purchase.state == 'Zaplatena') { %> Zaplatená <% }
+                    else { %> Dokončená <% } %>
+                  </td>
+                  <td class="dashboard-table__cell">
+                    <%= purchase.completedActivities.length %> <%
+                    if(purchase.completedActivities.some((activity) =>
+                    activity.state === 'kontrola')) { %>
+                    <span style="color: orange">
+                      <span class="fas fa-exclamation-triangle"></span>
+                    </span>
+                    <% } %>
+                  </td>
+                  <td class="dashboard-table__cell">
+                    <a
+                      class="link link--dark"
+                      href="<%= `/admin/purchase/${purchase.id}` %>"
+                    >
+                      Detaily <span class="fas fa-arrow-right"></span>
+                    </a>
+                  </td>
+                </tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </div>
+    </main>
+    <%- include('../templates/footer.ejs') -%> <%-
+    include('../templates/scripts.ejs') -%>
+  </body>
+</html>

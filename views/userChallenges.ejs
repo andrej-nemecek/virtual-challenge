@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <%- include('./templates/meta.ejs')-%>
+    <title>OSA Virtual Challenge</title>
+  </head>
+  <body>
+    <header class="page-header page-header--bg-homepage">
+      <div class="l-page-container">
+        <%- include('./templates/nav.ejs')-%>
+        <div class="py-4 text-center">
+          <section>
+            <h1 class="page-header__headline">
+              Moje výzvy
+              <span
+                class="headline-underline headline-underline--centered"
+              ></span>
+            </h1>
+            <p class="page-header__text">
+              Dokonči svoje výzvy a získaj okrem medaile a odmien aj skvelý pocit.
+            </p>
+          </section>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="vyzvy" class="bg-basic py-4">
+        <div class="l-page-container">
+          <% if (userChallenges.length === 0) { %>
+          <div class="text-center">
+            <p>
+              Zatiaľ si sa nezapojil do žiadnej výzvy.
+          </p>
+          <a class="button" href="/#vyzvy">Zobraziť všetky výzvy</a>
+          <% } %>
+          <div class="cards-grid">
+            <% userChallenges.forEach(challengeDetails => { %>
+            <a href="<%= `/ucet/vyzvy/${challengeDetails.id}` %>">
+              <article
+                class="challenge-card <%= `bg-card__${challengeDetails.challenge.tag}` %>"
+              >
+                <h3 class="challenge-card__title">
+                  <%= challengeDetails.challenge.name %>
+                </h3>
+                <div class="challenge-card__section">
+                  <div class="challenge-card__text challenge-card__text--bold">
+                    Počet aktivít:
+                  </div>
+                  <div
+                    class="challenge-card__text challenge-card__text--highlighted"
+                  >
+                    <%= challengeDetails.challenge.activities.length %>
+                  </div>
+                </div>
+                <div class="challenge-card__section">
+                  <div class="challenge-card__text challenge-card__text--bold">
+                    Počet kilometrov:
+                  </div>
+                  <div
+                    class="challenge-card__text challenge-card__text--highlighted"
+                  >
+                    <%= `${challengeDetails.challenge.kilometers}km` %>
+                  </div>
+                </div>
+                <div class="challenge-card__section">
+                  <div class="challenge-card__text challenge-card__text--bold">
+                    Platné do:
+                  </div>
+                  <div class="challenge-card__text">
+                    <%= challengeDetails.deadline.toLocaleDateString('sk-SK') %>
+                  </div>
+                </div>
+              </article>
+            </a>
+            <% }) %>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include('./templates/footer.ejs') -%> <%-
+    include('./templates/scripts.ejs') -%>
+  </body>
+</html>
